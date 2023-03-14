@@ -11,6 +11,7 @@ const CardContainer = styled.div`
     align-items: center;
     position: relative;
     transform: rotateY(-180deg);
+    cursor: pointer;
     .card {
         transform: rotateY(180deg);
     }
@@ -37,10 +38,9 @@ function Card({children, isVisible, play, value, index}) {
     */
     return (
         <CardContainer onClick={() => {play(value, index)}}>
-            <CardContent className={`${isVisible === true ? 'card' : ''}`}>
-                {!isVisible && children}
-                {isVisible && 
-                <BackCard />}
+            <CardContent className={`${!isVisible ? 'card' : ''}`}>
+                {isVisible && children}
+                {!isVisible && <BackCard />}
             </CardContent>
         </CardContainer>
     )

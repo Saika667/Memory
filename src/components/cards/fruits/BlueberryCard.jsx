@@ -5,7 +5,7 @@ const BlueberryCardContainer = styled.div`
 
 `
 
-const BlueberryContainer = styled.div`
+export const BlueberryContainer = styled.div`
     position: absolute;
 
     &.berryOne {
@@ -54,7 +54,7 @@ const BlueberryContainer = styled.div`
     }
 `
 
-const Blueberry = styled.div`
+export const Blueberry = styled.div`
     width: 1.2rem;
     height: 1rem;
     border-radius: 50%;
@@ -82,7 +82,7 @@ const Blueberry = styled.div`
     }
 `
 
-const BlueberryBottom = styled.div`
+export const BlueberryBottom = styled.div`
     width: .1rem;
     height: .2rem;
     border-radius: 50% 50% 0 0;

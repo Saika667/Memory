@@ -15,7 +15,7 @@ root.render(
                 <GlobalStyle />
                 <Routes>
                     <Route path="/home" element={ <HomePage /> } />
-                    <Route path="/game" element={ <GamePage /> } />
+                    <Route path="/game/:collection/:difficulty" element={ <GamePage /> } />
                     <Route path="*" element={ <HomePage /> } />
                 </Routes>
             </App>

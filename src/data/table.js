@@ -16,6 +16,13 @@ import PeachCard from "../components/cards/fruits/PeachCard"
 import PitahayaCard from "../components/cards/fruits/PitahayaCard"
 import PomegranateCard from "../components/cards/fruits/PomegranateCard"
 import MangosteenCard from "../components/cards/fruits/MangosteenCard"
+import SeaweedCard from "../components/cards/ocean/SeaweedCard"
+import StarfishCard from "../components/cards/ocean/StarfishCard"
+import SmallFishCard from "../components/cards/ocean/SmallFishCard"
+import ShellfishCard from "../components/cards/ocean/ShellfishCard"
+
+
+
 
 export const cardTable = [
     {
@@ -107,5 +114,55 @@ export const cardTable = [
         id: 'fru18',
         card: <MangosteenCard />,
         category: 'fruit'
+    },
+    {
+        id: 'ocea1',
+        card: <SeaweedCard />,
+        category: 'ocean'
+    },
+    {
+        id: 'ocea2',
+        card: <StarfishCard />,
+        category: 'ocean'
+    },
+    {
+        id: 'ocea3',
+        card: <SmallFishCard />,
+        category: 'ocean'
+    },
+    {
+        id: 'ocea4',
+        card: <ShellfishCard />,
+        category: 'ocean'
+    },
+    {
+        id: 'ocea5',
+        card: <ShellfishCard />,
+        category: 'ocean'
+    },
+    {
+        id: 'ocea6',
+        card: <ShellfishCard />,
+        category: 'ocean'
+    },
+    {
+        id: 'ocea7',
+        card: <ShellfishCard />,
+        category: 'ocean'
+    },
+    {
+        id: 'ocea8',
+        card: <StarfishCard />,
+        category: 'ocean'
+    },
+    {
+        id: 'ocea9',
+        card: <SmallFishCard />,
+        category: 'ocean'
+    },
+    {
+        id: 'ocea10',
+        card: <SmallFishCard />,
+        category: 'ocean'
     },
 ]

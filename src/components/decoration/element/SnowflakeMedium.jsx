@@ -1,10 +1,11 @@
 import styled from "styled-components"
 
 const SnowflakeContainer = styled.div`
-    //background-color: blue;
     position: absolute;
-    top: 1rem;
-    left: 1rem;
+    transform-origin: center center;
+    &.homePage {
+        z-index: 5;
+    }
 `
 const SnowflakeComponent = styled.div`
     //70px
@@ -98,10 +99,10 @@ const LittleBranch = styled.div`
     }
 `
 
-function SnowflakeMedium() {
+function SnowflakeMedium({ classNames }) {
 
     return (
-        <SnowflakeContainer>
+        <SnowflakeContainer className={classNames}>
             <SnowflakeComponent>
                 <BranchContainer className="branchOne">
                     <Branch>

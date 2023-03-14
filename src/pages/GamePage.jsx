@@ -2,11 +2,16 @@ import styled, { keyframes } from "styled-components"
 import { GameTitle, PageContainer } from "../utils/styles/Atoms"
 import Card from "../components/cards/Card"
 import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
 import { cardTable } from "../data/table"
 import Snowflake from "../components/decoration/element/Snowflake"
 import SnowflakeMedium from "../components/decoration/element/SnowflakeMedium"
+import DecorationBand from "../components/decoration/DecorationBand"
+import Modal from "../components/Modal"
+import Stopwatch from "../components/decoration/element/Stopwatch"
+import CardPair from "../components/decoration/element/CardPair"
 
-function animationDelay(snowflakeNumber, delay, className) {
+export function animationDelay(snowflakeNumber, delay, className) {
     let style = '';
     for(let i = 0; i <= snowflakeNumber; i++) {
         style += `
@@ -18,58 +23,69 @@ function animationDelay(snowflakeNumber, delay, className) {
     return style;
 }
 
-const SnowflakeFall = keyframes`
+export const SnowflakeFall = keyframes`
     0% {
-        transform: translateX(0) translateY(0);
+        transform: translateX(0) translateY(0) rotate(0);
         animation-timing-function: linear;
     }
     25% {
-        transform: translateX(30px) translateY(25vh);
+        transform: translateX(15px) translateY(25vh) rotate(-80deg);
         animation-timing-function: linear;
     }
     40% {
-        transform: translateX(40px) translateY(30vh);
+        transform: translateX(20px) translateY(35vh) rotate(20deg);
         animation-timing-function: linear;
     }
     50% {
-        transform: translateX(45px) translateY(55vh);
+        transform: translateX(25px) translateY(45vh) rotate(80deg);
         animation-timing-function: linear;
     }
     75% {
-        transform: translateX(35px) translateY(75vh);
+        transform: translateX(30px) translateY(75vh) rotate(180deg);
         animation-timing-function: linear;
     }
-    100% {
-        transform: translateX(70px) translateY(100vh);
+    90% {
+        transform: translateX(30px) translateY(90vh) rotate(225deg);
         animation-timing-function: linear;
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(40px) translateY(100vh) rotate(255deg);
+        animation-timing-function: linear;
+        opacity: 0;
     }
 `
 
-const SnowflakeFallTwo = keyframes`
+export const SnowflakeFallTwo = keyframes`
     0% {
-        transform: translateX(0) translateY(0);
+        transform: translateX(0) translateY(0) rotate(0);
         animation-timing-function: linear;
     }
     25% {
-        transform: translateX(15px) translateY(20vh);
+        transform: translateX(15px) translateY(25vh) rotate(90deg);
         animation-timing-function: linear;
     }
     40%  {
-        transform: translateX(-10px) translateY(40vh);
+        transform: translateX(0) translateY(40vh) rotate(170deg);
         animation-timing-function: linear;
     }
     50% {
-        transform: translateX(5px) translateY(60vh);
+        transform: translateX(5px) translateY(50vh) rotate(210deg);
         animation-timing-function: linear;
     }
     75% {
-        transform: translateX(-15px) translateY(80vh);
+        transform: translateX(-20px) translateY(75vh) rotate(280deg);
         animation-timing-function: linear;
     }
-
-    100% {
-        transform: translateX(20px) translateY(100vh);
+    90% {
+        transform: translateX(30px) translateY(90vh) rotate(304deg);
         animation-timing-function: linear;
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-30px) translateY(100vh) rotate(324deg);
+        animation-timing-function: linear;
+        opacity: 0;
     }
 `
 
@@ -78,24 +94,43 @@ const Page = styled.div`
 `
 
 const Band = styled.div`
-    background-color: blue;
     min-height: 100vh;
     width: 180px;
+    min-width: 180px;
 `
 
 const ModuleBand = styled.div`
-    margin: 10px 15px;
+    margin: 20px 15px;
+    position: relative;
+    z-index: 1;
 `
 
 const TitleModule = styled.h2`
     font-size: 18px;
+    padding-bottom: 10px;
 `
 
-const Timer = styled.div`
-    font-size: 18px;
-    font-weight: 500;
+const ModuleBandContent = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`
+
+const TimerContainer = styled.div`
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+
+const TextInformation = styled.div`
+    font-size: 25px;
+    font-weight: bold;
     padding: 0 10px;
-    background-color: yellow;
+
+    &.largeSize {
+        font-size: 50px;
+    }
 `
 
 const GameContainer = styled.div`
@@ -112,7 +147,7 @@ const Game = styled.div.attrs(props => ({
     display: grid;
     grid-template-columns: ${props => `repeat(${props.elementColumn}, 7.6rem)`};
     grid-template-rows: ${props => `repeat(${props.elementRow}, 8.7rem)`};
-    padding: 10px;
+    padding: 10px 5px;
 `
 
 const GridElement = styled.div`
@@ -125,7 +160,6 @@ const SnowflakeContainer = styled.div`
     height: 75px;
     width: calc(100% - 180px);
     position: absolute;
-    background-color: black;
     top: -75px;
     right: 0;
     display: flex;
@@ -137,9 +171,9 @@ const SnowflakeContainerComp = styled.div`
     width: 70px;
     ${animationDelay(7, 900, 'one')}
     ${animationDelay(7, 800, 'two')}
-    ${animationDelay(7, 750, 'three')}
-    ${animationDelay(7, 900, 'four')}
-    ${animationDelay(7, 750, 'five')}
+    ${animationDelay(7, 1200, 'three')}
+    ${animationDelay(7, 1850, 'four')}
+    ${animationDelay(7, 1200, 'five')}
     transform: translateZ(0deg);
     &.compOne {
         & > div {
@@ -155,19 +189,19 @@ const SnowflakeContainerComp = styled.div`
 
     &.compThree {
         & > div {
-            animation: ${SnowflakeFallTwo} 6000ms ease-in-out forwards infinite;
+            animation: ${SnowflakeFallTwo} 9400ms ease-in-out forwards infinite;
         }
     }
 
     &.compFour {
         & > div {
-            animation: ${SnowflakeFall} 7200ms ease-in-out forwards infinite;
+            animation: ${SnowflakeFall} 8600ms ease-in-out forwards infinite;
         }
     }
 
     &.compFive {
         & > div {
-            animation: ${SnowflakeFall} 6000ms ease-in-out forwards infinite;
+            animation: ${SnowflakeFall} 9400ms ease-in-out forwards infinite;
         }
     }
 `
@@ -186,6 +220,7 @@ const SnowflakeComponent = styled.div`
 `
 
 function GamePage() {
+    const timePerGame = 300
 //state pour le tableau de l'ensemble des cartes
     const [visibilitiesCard, setVisibilitiesCard] = useState([]);
 /*
@@ -198,10 +233,17 @@ tableau différent de vide alors c'est la deuxième carte de la manche, une comp
     const [grid, setGrid] = useState([])
 //permet d'éviter le spam et d'attendre la vérification de la paire avant de pouvoir rejouer
     const [canPlay, setCanPlay] = useState(true)
-    const [timeLeft, setTimeLeft] = useState(300)
+    const [timeLeft, setTimeLeft] = useState(timePerGame)
 //retournement de carte ??????????????
     const [flipped, setFlipped] = useState([])
-    
+//state correspondant au nombre de paire trouvé 
+    const [pairFound, setPairFound] = useState(0)
+//visibilité de la modal (visible ou non)
+    const [modalVisible, setModalVisible] = useState(false)
+//stockage résultat de la partie
+    const [finalResult, setFinalResult] = useState(null)
+
+    const [numberOfGames, setNumberOfGames] = useState(0)
 // Utilisation de cette variable pour accéder à un composant card en particulier pour flip vers la position normale
     let cardRefs = []
 
@@ -242,12 +284,12 @@ tableau différent de vide alors c'est la deuxième carte de la manche, une comp
 
 
 //génère la grille en fonction de la difficulté sélectionnée sur la homepage
-    function generateGrid(numberElt) {
+    function generateGrid(numberElt, collection) {
 /* A SUPP ?
 génère un tableau de x éléments (10), keys permet de récupérer l'emplacement de l'élément
 let gridArray = [...Array(10).keys()];*/
-        let cardTableCopy = [...cardTable]
-        console.log(cardTable)
+// Filter permet de recuperer seulement les objets ayant pour category la collection selectionnee
+        let cardTableCollection = [...cardTable].filter((card) => card.category === collection)
         let symbolGrid = []
 /*
 Cette boucle permet de récupérer les cartes de manière aléatoire du tableau (cardTable) contenant toute les cartes
@@ -264,7 +306,7 @@ la suppression de la carte permet de ne pas générer deux fois une même paire 
 [0] car splice nous retourne un tableau et on souhaite récupérer le 1er élément du tableau on ajoute ".card" qui 
 correspond à la clé de la valeur qui nous intéresse (la carte)
 */    
-            card: cardTableCopy.splice(Math.floor(Math.random() * cardTableCopy.length), 1)[0].card
+            card: cardTableCollection.splice(Math.floor(Math.random() * cardTableCollection.length), 1)[0].card
             });
         }
 
@@ -297,6 +339,13 @@ on compare la valeur des deux cartes pour savoir si c'est une paire
         } else {
             if (firstCard[0] === value) {
                 setCanPlay(true)
+                setPairFound(pairFound + 1)
+//fin du jeu, victoire
+                if (pairFound + 1 === numberElt / 2) {
+                    setCanPlay(false)
+                    setFinalResult('win')
+                    setModalVisible(true)
+                }
             } else {
 //setTimeOut permet d'ajouter du delai et donc de laisser le temps que la deuxième carte s'affiche même si 
 //la paire n'est pas bonne
@@ -316,22 +365,47 @@ on compare la valeur des deux cartes pour savoir si c'est une paire
         }
     }
 
+    function getTimeMinuteAndSecond(time) {
+        let minutes = Math.floor(time / 60);
+        let seconds = time % 60;
+        seconds = seconds < 10 ? `0${seconds}` : seconds
+
+        return `0${minutes} : ${seconds}`;
+    }
+
+    function replay(diffculty) {
+        setFirstCard([]);
+        setGrid([]);
+        setCanPlay(true);
+        setTimeLeft(timePerGame);
+        setFlipped([]);
+        setPairFound(0);
+        setModalVisible(false);
+        setFinalResult(null);
+    }
+
 /*
 useEffect permet que le code s'exécute que lors du chargement de la page car on à ajouter "[]" en deuxième paramètre
 si on souhaite que le code soit éxecuter à des moments spécifique on ajoute dans le tableau vide l'élément déclencheur
 ex: un state, useEffect se déclenchera à chaque changement de state
 */
-    let { elementColumn, elementRow, numberElt} = getDifficulty('facile');
+    let { difficulty, collection } = useParams();
+    let { elementColumn, elementRow, numberElt} = getDifficulty(difficulty);
     useEffect(() => {
-        setGrid(generateGrid(numberElt));
-    }, []);
+        setGrid(generateGrid(numberElt, collection));
+    }, [numberOfGames]);
 
     useEffect(() => {
         function timer() {
             setTimeLeft(timeLeft - 1)
         }
         if (timeLeft === 0) {
-            return;
+            setFinalResult('lose')
+            setModalVisible(true)
+            return
+        }
+        if ( finalResult === 'win') {
+            return
         }
         setTimeout(timer, 1000);
     }, [timeLeft]);
@@ -340,18 +414,41 @@ ex: un state, useEffect se déclenchera à chaque changement de state
         <PageContainer>
             <Page>
                 <Band>
+                    <DecorationBand />
                     <GameTitle>Memory</GameTitle>
 
                     <ModuleBand>
-                        <TitleModule>Paire trouvée :</TitleModule>
-                        {flipped.length}
+                        <TitleModule>Temps écoulé :</TitleModule>
+                        <ModuleBandContent>
+                            <Stopwatch />
+                            <TimerContainer>
+                                <TextInformation>{getTimeMinuteAndSecond(timeLeft)}</TextInformation>
+                            </TimerContainer>
+                        </ModuleBandContent>
                     </ModuleBand>
 
                     <ModuleBand>
-                        <TitleModule>Temps écoulé :</TitleModule>
-                        <Timer>{timeLeft}</Timer>
+                        <TitleModule>Paire trouvée :</TitleModule>
+                        <ModuleBandContent>
+                            <CardPair />
+                            <TimerContainer>
+                                <TextInformation className="largeSize">{pairFound}</TextInformation>
+                            </TimerContainer>
+                        </ModuleBandContent>
                     </ModuleBand>
                 </Band>
+                
+                <Modal 
+                    result={finalResult}
+                    time={timeLeft}
+                    transformTime={getTimeMinuteAndSecond}
+                    pairsFound={pairFound}
+                    isVisible={modalVisible}
+                    closeModal={setModalVisible}
+                    numberOfGames={numberOfGames}
+                    setNumberOfGames={setNumberOfGames}
+                    collection={collection}
+                />
 
                 <GameContainer>
                     <SnowflakeContainer>

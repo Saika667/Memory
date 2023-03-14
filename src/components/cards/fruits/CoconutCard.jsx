@@ -5,7 +5,7 @@ const CoconutCardContainer = styled.div`
     
 `
 
-const CoconutContainer = styled.div`
+export const CoconutContainer = styled.div`
     position: absolute;
 
     &.coco {
@@ -21,7 +21,7 @@ const CoconutContainer = styled.div`
     }
 `
 
-const Coconut = styled.div`
+export const Coconut = styled.div`
     width: 3rem;
     height: 3.4rem;
     background-color: #583429;
@@ -29,7 +29,7 @@ const Coconut = styled.div`
     position: relative;
 `
 
-const CoconutHole = styled.div`
+export const CoconutHole = styled.div`
     width: .3rem;
     height: .3rem;
     background-color: ${darken(.1, "#583429")};
