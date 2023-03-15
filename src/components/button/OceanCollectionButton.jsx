@@ -101,7 +101,7 @@ export const Buffer = styled.p`
     top: 1.15rem;
     left: .15rem;
     color: red;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: bold;
     padding: 0 3px;
     border: 2px solid red;

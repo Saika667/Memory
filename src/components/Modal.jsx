@@ -38,6 +38,7 @@ const ResultContainer = styled.div`
 const Text = styled.h2`
     text-align: center;
     color: white;
+    padding-bottom: 1.5rem;
 `
 
 const TextInformation = styled.p`
@@ -63,7 +64,7 @@ function Modal({ result, time, transformTime, pairsFound, isVisible, numberOfGam
                     <Text>Perdu, essaie encore !</Text>}
 
                     <TextInformation>
-                        { time === 0 ? 'Temps écoulé...' : transformTime(time) }
+                        { time === 0 ? 'Temps écoulé...' : `${transformTime(time)} temps restant.` }
                     </TextInformation>
 
                     {result === 'win' ?

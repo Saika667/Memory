@@ -93,7 +93,7 @@ const LabelButton = styled.p`
     padding: 10px 20px;
     z-index: 7;
     user-select: none;
-    text-shadow: 0px 0px 10px white;
+    text-shadow: 0 0 10px white;
 `
 const SnowflakeElement = styled.div`
     position: absolute;
@@ -102,6 +102,7 @@ const SnowflakeElement = styled.div`
     opacity: 0;
     transform-origin: center center;
     transform: rotate(80deg);
+    transition: all 500ms;
 
     &.one {
         top: -.6rem;
@@ -114,7 +115,6 @@ const SnowflakeElement = styled.div`
     }
 
     &.active {
-        transition: all 500ms;
         transform: rotate(0);
         opacity: 1;
         z-index: 3;

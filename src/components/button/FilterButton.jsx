@@ -40,9 +40,9 @@ const Button = styled.div`
 const LabelButton = styled.p`
     text-transform: uppercase;
     text-align: center;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: bold;
-    line-height: 40px;
+    line-height: 2.5rem;
 `
 
 const BufferElement = styled(Buffer)`
@@ -57,6 +57,7 @@ const SnowflakeElement = styled.div`
     opacity: 0;
     transform-origin: center center;
     transform: rotate(80deg);
+    transition: all 500ms;
 
     &.one {
         top: -.6rem;
@@ -69,7 +70,6 @@ const SnowflakeElement = styled.div`
     }
 
     &.active {
-        transition: all 500ms;
         transform: rotate(0);
         opacity: 1;
         z-index: 3;

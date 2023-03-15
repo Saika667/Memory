@@ -3,6 +3,8 @@ import styled from "styled-components"
 const SnowflakeContainer = styled.div`
     position: absolute;
     transform-origin: center center;
+    height: 2.5rem;
+    width: 2.5rem;
     &.homePage {
         z-index: 5;
     }
@@ -22,37 +24,37 @@ const BranchContainer = styled.div`
 
     &.branchOne {
         top: 0;
-        left: 10px;
+        left: .625rem;
     }
 
     &.branchTwo {
         transform: rotate(55deg);
-        top: 5px;
-        left: 18px;
+        top: .313rem;
+        left: 1.125rem;
     }
 
     &.branchThree {
         transform: rotate(125deg);
-        bottom: 5px;
-        left: 18px;
+        bottom: .313rem;
+        left: 1.125rem;
     }
 
     &.branchFour {
         bottom: 0;
-        left: 10px;
+        left: .625rem;
         transform: rotate(180deg);
     }
 
     &.branchFive {
         transform: rotate(-55deg);
-        top: 5px;
-        left: 1px;
+        top: .313rem;
+        left: .063rem;
     }
 
     &.branchSix {
         transform: rotate(-125deg);
-        bottom: 5px;
-        left: 1px;
+        bottom: .313rem;
+        left: .063rem;
     }
 `
 
@@ -65,7 +67,7 @@ const Branch = styled.div`
     position: relative;
 `
 const LittleBranch = styled.div`
-    width: 2px;
+    width: .125rem;
     border-radius: 88% 88% 0 0;
     position: absolute;
     background-color: white;

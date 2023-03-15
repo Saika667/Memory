@@ -1,6 +1,6 @@
 export const colors = {
     winter: {
-        primary: '#F2EBE5',
+        primary: '#2e0057',
         secondary: '#873651',
         third: '#2F5075',
         fourth: '#391335',

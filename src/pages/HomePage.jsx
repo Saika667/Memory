@@ -1,6 +1,4 @@
 import styled from "styled-components"
-import Snowflake from "../components/decoration/element/Snowflake"
-import SnowflakeMedium from "../components/decoration/element/SnowflakeMedium"
 import FilterButton from "../components/button/FilterButton"
 import PlayButton from "../components/button/PlayButton"
 import DifficultyButton from "../components/button/DifficultyButton"
@@ -11,9 +9,9 @@ import Frame from "../components/Frame"
 import FruitCollectionButton from "../components/button/FruitCollectionButton"
 import OceanCollectionButton from "../components/button/OceanCollectionButton"
 import { GameTitle, PageContainer } from "../utils/styles/Atoms"
-import { SnowflakeFall, SnowflakeFallTwo, animationDelay} from "./GamePage"
 import { useState } from "react"
-
+import SnowflakeBarAnimate from "../components/decoration/SnowflakeBarAnimate"
+import FolioImage from "../components/decoration/element/FolioImage"
 const TitleContainer = styled.div`
     display: flex;
     justify-content: center;
@@ -25,9 +23,9 @@ const DecorationTitle = styled.div`
 
 const ParamContainer = styled.div`
     height: auto;
-    padding: 40px;
+    padding: 2.5rem;
     border-radius: 30px;
-    box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.7);
+    box-shadow: 0 0 11px 1px rgba(0,0,0,0.7);
     position: relative;
     z-index: 5;
 `
@@ -50,19 +48,20 @@ const MenuContainer = styled.div`
 const Selector = styled.div`
     display: flex;
     justify-content: space-between;
-    margin: 10px 0;
+    margin: .625rem;
 `
 
 const SubTitle = styled.h2`
     color: black;
-    width: 110px;
-    line-height: 60px;
+    width: 6.875rem;
+    line-height: 3.75rem;
 `
 
 const SelectorContainer = styled.div`
     display: flex;
     justify-content: space-around;
-    width: calc(100% - 110px);
+    align-items: center;
+    width: calc(100% - 6.875rem);
 `
 
 const MountainComponent = styled.div`
@@ -175,145 +174,14 @@ const FirComponent = styled.div`
     }
 `
 
-const SnowflakeContainer = styled.div`
-    height: 75px;
-    width: 100%;
-    position: absolute;
-    top: -75px;
-    display: flex;
-    justify-content: space-around;
-`
-
-const SnowflakeContainerComp = styled.div`
-    background-color: green;
-    width: 70px;
-    ${animationDelay(7, 700, 'one')}
-    ${animationDelay(7, 1400, 'two')}
-    ${animationDelay(7, 1200, 'three')}
-    ${animationDelay(7, 1850, 'four')}
-    ${animationDelay(7, 1900, 'five')}
-    ${animationDelay(7, 1200, 'six')}
-    transform: translateZ(0deg);
-
-    &.compOne {
-        & > div {
-            animation: ${SnowflakeFallTwo} 7000ms ease-in-out forwards infinite;
-        }
-    }
-
-    &.compTwo {
-        & > div {
-            animation: ${SnowflakeFall} 8000ms ease-in-out forwards infinite;
-        }
-    }
-
-    &.compThree {
-        & > div {
-            animation: ${SnowflakeFallTwo} 9400ms ease-in-out forwards infinite;
-        }
-    }
-
-    &.compFour {
-        & > div {
-            animation: ${SnowflakeFall} 8600ms ease-in-out forwards infinite;
-        }
-    }
-
-    &.compFive {
-        & > div {
-            animation: ${SnowflakeFall} 9400ms ease-in-out forwards infinite;
-        }
-    }
-
-    &.compSix {
-        & > div {
-            animation: ${SnowflakeFallTwo} 9000ms ease-in-out forwards infinite;
-        }
-    }
-`
-
-const SnowflakeSmall = styled.div`
-    width: 1.5rem;
-    height: 1.5rem;
-    border-radius: 50%;
-    background-color: white;
-    filter: blur(3px);
-    position: absolute;
-    z-index: 5;
-
-    &.verySmall {
-        width: 1rem;
-        height: 1rem;
-    }
-`
-
 function HomePage() {
     const [difficulty, setDifficulty] = useState('facile')
     const [collection, setCollection] = useState('fruit')
 
     return (
         <PageContainer>
-            <SnowflakeContainer>
-                <SnowflakeContainerComp className="compOne">
-                    <Snowflake classNames="one homePage" />
-                    <SnowflakeSmall className="one"/>
-                    <SnowflakeMedium classNames="one homePage"/>
-                    <SnowflakeSmall className="one verySmall"/>
-                    <SnowflakeMedium classNames="one homePage"/>
-                    <SnowflakeSmall className="one"/>
-                    <SnowflakeSmall className="one verySmall"/>
-                </SnowflakeContainerComp>
-
-                <SnowflakeContainerComp className="compTwo">
-                    <SnowflakeMedium classNames="two homePage"/>
-                    <SnowflakeSmall className="two"/>
-                    <SnowflakeMedium classNames="two homePage"/>
-                    <SnowflakeSmall className="two verySmall"/>
-                    <SnowflakeMedium classNames="two homePage"/>
-                    <Snowflake classNames="two homePage"/>
-                    <SnowflakeSmall className="two verySmall"/>
-                </SnowflakeContainerComp>
-
-                <SnowflakeContainerComp className="compThree">
-                    <SnowflakeMedium classNames="three homePage"/>
-                    <SnowflakeMedium classNames="three homePage"/>
-                    <SnowflakeSmall className="three"/>
-                    <Snowflake classNames="three homePage"/>
-                    <SnowflakeMedium classNames="three homePage"/>
-                    <SnowflakeSmall className="three verySmall"/>
-                    <SnowflakeSmall className="three"/>
-                </SnowflakeContainerComp>
-
-                <SnowflakeContainerComp className="compFour">
-                    <SnowflakeSmall className="four verySmall"/>
-                    <SnowflakeSmall className="four"/>
-                    <Snowflake classNames="four homePage"/>
-                    <SnowflakeMedium classNames="four homePage"/>
-                    <SnowflakeMedium classNames="four homePage"/>
-                    <SnowflakeSmall className="four verySmall"/>
-                </SnowflakeContainerComp>
-
-                <SnowflakeContainerComp className="compFive">
-                    <SnowflakeMedium classNames="five homePage"/>
-                    <Snowflake classNames="five homePage"/>
-                    <SnowflakeSmall className="five verySmall"/>
-                    <SnowflakeSmall className="five"/>
-                    <SnowflakeMedium classNames="five homePage"/>
-                    <SnowflakeSmall className="five"/>
-                    <SnowflakeMedium classNames="five homePage"/>
-                </SnowflakeContainerComp>
-
-                <SnowflakeContainerComp className="compSix">
-                    <SnowflakeMedium classNames="six homePage"/>
-                    <SnowflakeSmall className="six"/>
-                    <SnowflakeMedium classNames="six homePage"/>
-                    <Snowflake classNames="six homePage"/>
-                    <SnowflakeSmall className="six verySmall"/>
-                    <SnowflakeSmall className="six"/>
-                    <SnowflakeMedium classNames="six homePage"/>
-                </SnowflakeContainerComp>
-            </SnowflakeContainer>
-
+            <SnowflakeBarAnimate classPage={'home'} />
+            <FolioImage />
             <TitleContainer>
                 <DecorationTitle>
                     

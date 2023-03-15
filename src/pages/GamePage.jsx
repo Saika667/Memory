@@ -1,93 +1,14 @@
-import styled, { keyframes } from "styled-components"
+import styled from "styled-components"
 import { GameTitle, PageContainer } from "../utils/styles/Atoms"
 import Card from "../components/cards/Card"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { cardTable } from "../data/table"
-import Snowflake from "../components/decoration/element/Snowflake"
-import SnowflakeMedium from "../components/decoration/element/SnowflakeMedium"
 import DecorationBand from "../components/decoration/DecorationBand"
 import Modal from "../components/Modal"
 import Stopwatch from "../components/decoration/element/Stopwatch"
 import CardPair from "../components/decoration/element/CardPair"
-
-export function animationDelay(snowflakeNumber, delay, className) {
-    let style = '';
-    for(let i = 0; i <= snowflakeNumber; i++) {
-        style += `
-            & .${className}:nth-child(${i + 1}) {
-                animation-delay: ${delay * i}ms;
-            }
-        `
-    }
-    return style;
-}
-
-export const SnowflakeFall = keyframes`
-    0% {
-        transform: translateX(0) translateY(0) rotate(0);
-        animation-timing-function: linear;
-    }
-    25% {
-        transform: translateX(15px) translateY(25vh) rotate(-80deg);
-        animation-timing-function: linear;
-    }
-    40% {
-        transform: translateX(20px) translateY(35vh) rotate(20deg);
-        animation-timing-function: linear;
-    }
-    50% {
-        transform: translateX(25px) translateY(45vh) rotate(80deg);
-        animation-timing-function: linear;
-    }
-    75% {
-        transform: translateX(30px) translateY(75vh) rotate(180deg);
-        animation-timing-function: linear;
-    }
-    90% {
-        transform: translateX(30px) translateY(90vh) rotate(225deg);
-        animation-timing-function: linear;
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(40px) translateY(100vh) rotate(255deg);
-        animation-timing-function: linear;
-        opacity: 0;
-    }
-`
-
-export const SnowflakeFallTwo = keyframes`
-    0% {
-        transform: translateX(0) translateY(0) rotate(0);
-        animation-timing-function: linear;
-    }
-    25% {
-        transform: translateX(15px) translateY(25vh) rotate(90deg);
-        animation-timing-function: linear;
-    }
-    40%  {
-        transform: translateX(0) translateY(40vh) rotate(170deg);
-        animation-timing-function: linear;
-    }
-    50% {
-        transform: translateX(5px) translateY(50vh) rotate(210deg);
-        animation-timing-function: linear;
-    }
-    75% {
-        transform: translateX(-20px) translateY(75vh) rotate(280deg);
-        animation-timing-function: linear;
-    }
-    90% {
-        transform: translateX(30px) translateY(90vh) rotate(304deg);
-        animation-timing-function: linear;
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(-30px) translateY(100vh) rotate(324deg);
-        animation-timing-function: linear;
-        opacity: 0;
-    }
-`
+import SnowflakeBarAnimate from "../components/decoration/SnowflakeBarAnimate"
 
 const Page = styled.div`
     display: flex;
@@ -95,19 +16,21 @@ const Page = styled.div`
 
 const Band = styled.div`
     min-height: 100vh;
-    width: 180px;
-    min-width: 180px;
+    width: 11.25rem;
+    min-width: 11.25rem;
 `
 
 const ModuleBand = styled.div`
-    margin: 20px 15px;
+    margin: 1.25rem .938rem;
     position: relative;
     z-index: 1;
 `
 
 const TitleModule = styled.h2`
-    font-size: 18px;
-    padding-bottom: 10px;
+    font-size: 1.125rem;
+    padding-bottom: .625rem;
+    font-weight: bold;
+    text-shadow: 0 0 11px white;
 `
 
 const ModuleBandContent = styled.div`
@@ -117,19 +40,20 @@ const ModuleBandContent = styled.div`
 `
 
 const TimerContainer = styled.div`
-    width: 100px;
+    width: 6.25rem;
     display: flex;
     justify-content: center;
     align-items: center;
 `
 
 const TextInformation = styled.div`
-    font-size: 25px;
+    font-size: 1.563rem;
     font-weight: bold;
-    padding: 0 10px;
+    padding: 0 .625rem;
+    text-shadow: 0 0 10px white;
 
     &.largeSize {
-        font-size: 50px;
+        font-size: 3.125rem;
     }
 `
 
@@ -155,69 +79,6 @@ const GridElement = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-`
-
-const SnowflakeContainer = styled.div`
-    height: 75px;
-    width: calc(100% - 180px);
-    position: absolute;
-    top: -75px;
-    right: 0;
-    display: flex;
-    justify-content: space-around;
-`
-
-const SnowflakeContainerComp = styled.div`
-    background-color: green;
-    width: 70px;
-    ${animationDelay(7, 900, 'one')}
-    ${animationDelay(7, 800, 'two')}
-    ${animationDelay(7, 1200, 'three')}
-    ${animationDelay(7, 1850, 'four')}
-    ${animationDelay(7, 1200, 'five')}
-    transform: translateZ(0deg);
-    &.compOne {
-        & > div {
-            animation: ${SnowflakeFallTwo} 7200ms ease-in-out forwards infinite;
-        }
-    }
-
-    &.compTwo {
-        & > div {
-            animation: ${SnowflakeFall} 6400ms ease-in-out forwards infinite;
-        }
-    }
-
-    &.compThree {
-        & > div {
-            animation: ${SnowflakeFallTwo} 9400ms ease-in-out forwards infinite;
-        }
-    }
-
-    &.compFour {
-        & > div {
-            animation: ${SnowflakeFall} 8600ms ease-in-out forwards infinite;
-        }
-    }
-
-    &.compFive {
-        & > div {
-            animation: ${SnowflakeFall} 9400ms ease-in-out forwards infinite;
-        }
-    }
-`
-
-const SnowflakeSmall = styled.div`
-    width: 1.5rem;
-    height: 1.5rem;
-    border-radius: 50%;
-    background-color: white;
-    filter: blur(3px);
-    position: absolute;
-`
-
-const SnowflakeComponent = styled.div`
-    
 `
 
 function GamePage() {
@@ -452,157 +313,7 @@ ex: un state, useEffect se déclenchera à chaque changement de state
                 />
 
                 <GameContainer>
-                    <SnowflakeContainer>
-                        <SnowflakeContainerComp className="compOne">
-                            <SnowflakeComponent className="one">
-                                <Snowflake />
-                            </SnowflakeComponent>
-
-                            <SnowflakeComponent className="one">
-                                <SnowflakeSmall />
-                            </SnowflakeComponent>
-
-                            <SnowflakeComponent className="one">
-                                <Snowflake />
-                            </SnowflakeComponent>
-
-                            <SnowflakeComponent className="one">
-                                <SnowflakeSmall />
-                            </SnowflakeComponent>
-
-                            <SnowflakeComponent className="one">
-                                <SnowflakeMedium />
-                            </SnowflakeComponent>
-                            
-                            <SnowflakeComponent className="one">
-                                <Snowflake />
-                            </SnowflakeComponent>
-
-                            <SnowflakeComponent className="one">
-                                <SnowflakeSmall />
-                            </SnowflakeComponent>
-                        </SnowflakeContainerComp>
-
-                        <SnowflakeContainerComp className="compTwo">
-                            <SnowflakeComponent className="two">
-                                <SnowflakeMedium />
-                            </SnowflakeComponent>
-                            
-                            <SnowflakeComponent className="two">
-                                <SnowflakeSmall />
-                            </SnowflakeComponent>
-
-                            <SnowflakeComponent className="two">
-                                <SnowflakeMedium />
-                            </SnowflakeComponent>
-
-                            <SnowflakeComponent className="two">
-                                <SnowflakeSmall />
-                            </SnowflakeComponent>
-
-                            <SnowflakeComponent className="two">
-                                <SnowflakeMedium />
-                            </SnowflakeComponent>
-
-                            <SnowflakeComponent className="two">
-                                <Snowflake />
-                            </SnowflakeComponent>
-
-                            <SnowflakeComponent className="two">
-                                <SnowflakeSmall />
-                            </SnowflakeComponent>
-                        </SnowflakeContainerComp>
-
-                        <SnowflakeContainerComp className="compThree">
-                            <SnowflakeComponent className="three">
-                                <SnowflakeMedium />
-                            </SnowflakeComponent>
-
-                            <SnowflakeComponent className="three">
-                                <SnowflakeMedium />
-                            </SnowflakeComponent>
-
-                            <SnowflakeComponent className="three">
-                                <SnowflakeSmall />
-                            </SnowflakeComponent>
-
-                            <SnowflakeComponent className="three">
-                                <Snowflake />
-                            </SnowflakeComponent>
-
-                            <SnowflakeComponent className="three">
-                                <SnowflakeMedium />
-                            </SnowflakeComponent>
-
-                            <SnowflakeComponent className="three">
-                                <SnowflakeSmall />
-                            </SnowflakeComponent>
-
-                            <SnowflakeComponent className="three">
-                                <SnowflakeSmall />
-                            </SnowflakeComponent>
-                        </SnowflakeContainerComp>
-
-                        <SnowflakeContainerComp className="compFour">
-                            <SnowflakeComponent className="four">
-                                <SnowflakeSmall />
-                            </SnowflakeComponent>
-
-                            <SnowflakeComponent className="four">
-                                <SnowflakeSmall />
-                            </SnowflakeComponent>
-
-                            <SnowflakeComponent className="four">
-                                <Snowflake />
-                            </SnowflakeComponent>
-
-                            <SnowflakeComponent className="four">
-                                <Snowflake />
-                            </SnowflakeComponent>
-
-                            <SnowflakeComponent className="four">
-                                <SnowflakeMedium />
-                            </SnowflakeComponent>
-
-                            <SnowflakeComponent className="four">
-                                <Snowflake />
-                            </SnowflakeComponent>
-
-                            <SnowflakeComponent className="four">
-                                <SnowflakeMedium />
-                            </SnowflakeComponent>
-                        </SnowflakeContainerComp>
-
-                        <SnowflakeContainerComp className="compFive">
-                            <SnowflakeComponent className="five">
-                                <SnowflakeMedium />
-                            </SnowflakeComponent>
-                            
-                            <SnowflakeComponent className="five">
-                                <Snowflake />
-                            </SnowflakeComponent>
-
-                            <SnowflakeComponent className="five">
-                                <SnowflakeSmall />
-                            </SnowflakeComponent>
-
-                            <SnowflakeComponent className="five">
-                                <Snowflake />
-                            </SnowflakeComponent>
-
-                            <SnowflakeComponent className="five">
-                                <SnowflakeSmall />
-                            </SnowflakeComponent>
-
-                            <SnowflakeComponent className="five">
-                                <SnowflakeMedium />
-                            </SnowflakeComponent>
-
-                            <SnowflakeComponent className="five">
-                                <Snowflake />
-                            </SnowflakeComponent>
-                        </SnowflakeContainerComp>
-                    </SnowflakeContainer>
+                    <SnowflakeBarAnimate classPage={'game'}/>
 
                     <Game className="grille" 
                         elementColumn={elementColumn} 

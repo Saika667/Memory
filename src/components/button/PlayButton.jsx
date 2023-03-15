@@ -41,7 +41,7 @@ const IconContainer = styled.div`
 const LabelButton = styled.p`
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1.25rem;
     color: white;
 `
 

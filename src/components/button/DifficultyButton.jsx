@@ -9,6 +9,7 @@ const Button = styled.div`
     padding: 5px 0 0 0;
     border-radius: 10px;
     background-color:  #5d5a5a;
+    cursor: pointer;
 
     &.active {
         background-color: #2e0057;

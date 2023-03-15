@@ -5,7 +5,7 @@ import Fir from "./element/Fir"
 
 const DecorationBandContainer = styled.div`
     min-height: 100vh;
-    width: 180px;
+    width: 11.25rem;
     background: linear-gradient(170deg, rgba(1,167,253,1) 10%, rgba(255,255,255,1) 55%);
     position: absolute;
     z-index: 1;
