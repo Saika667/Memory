@@ -136,6 +136,7 @@ const TextInformation = styled.div`
 const GameContainer = styled.div`
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 100%;
     background: linear-gradient(170deg, rgba(1,167,253,1) 27%, rgba(255,255,255,1) 70%);
 `
