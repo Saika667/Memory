@@ -13,6 +13,7 @@ const Button = styled.div`
 
     &.active {
         background-color: #2e0057;
+        transition: all 500ms;
     }
 `
 
@@ -23,6 +24,7 @@ const LabelButton = styled.p`
 
     &.active {
         color: white;
+        transition: all 500ms;
     }
 `
 
@@ -49,6 +51,7 @@ const Bar = styled.div`
         &.active {
             border: 2px solid #33FF00;
             background-color: #33FF00;
+            transition: all 500ms;
         }
     }
 
@@ -61,6 +64,7 @@ const Bar = styled.div`
         &.active {
             border: 2px solid #99FF00;
             background-color: #99FF00;
+            transition: all 500ms;
         }
     }
 
@@ -73,11 +77,13 @@ const Bar = styled.div`
             &.active {
                 border: 2px solid #FFCE30;
                 background-color: #FFCE30;
+                transition: all 500ms;
             }
         }
         
         &.active {
             border: 2px solid #FFCE30;
+            transition: all 500ms;
         }
     }
 
@@ -90,11 +96,13 @@ const Bar = styled.div`
             &.active {
                 border: 2px solid #FF9900;
                 background-color: #FF9900;
+                transition: all 500ms;
             }
         }
         
         &.active {
             border: 2px solid #FF9900;
+            transition: all 500ms;
         }
     }
 
@@ -107,11 +115,13 @@ const Bar = styled.div`
             &.active {
                 border: 2px solid #e83845;
                 background-color: #e83845;
+                transition: all 500ms;
             }
         }
 
         &.active {
             border: 2px solid #e83845;
+            transition: all 500ms;
         }
     }
 `

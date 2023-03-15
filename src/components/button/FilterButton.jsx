@@ -76,8 +76,8 @@ const SnowflakeElement = styled.div`
     }
 `
 
-function FilterButton({ label }) {
-    const [activeButton, setActiveButton]= useState(false)
+function FilterButton({ label, initialActive = false }) {
+    const [activeButton, setActiveButton]= useState(initialActive)
 
     return (
         <ButtonContainer>

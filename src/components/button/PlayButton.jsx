@@ -1,7 +1,8 @@
 import styled from "styled-components"
-import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay, faArrowRotateRight } from '@fortawesome/free-solid-svg-icons'
+import { useNavigate } from 'react-router-dom';
+
 
 const ButtonContainer = styled.div`
     width: 100%;
@@ -19,7 +20,7 @@ const Button = styled.div`
     cursor: pointer;
 `
 
-const ButtonLink = styled(Link)`
+const ButtonLink = styled.div`
     text-decoration: none;
 `
 
@@ -45,11 +46,24 @@ const LabelButton = styled.p`
     color: white;
 `
 
-function PlayButton({ difficulty, statut, click, collection }) {
+function PlayButton({ difficulty, statut, click = null, collection }) {
+    const navigate = useNavigate()
+
+    function handleClick() {
+        console.log(collection)
+        if (collection === null || difficulty === null) {
+            return
+        }
+        if (click !== null) {
+            click()
+        }
+        navigate(`/game/${collection}/${difficulty}`)
+    }
     return (
         <ButtonContainer>
             <Button>
-                <ButtonLink onClick={() => click()} to={`/game/${collection}/${difficulty}`}>
+                <ButtonLink onClick={() => handleClick()}>
+                {/* <ButtonLink onClick={() => click()} to={`/game/${collection}/${difficulty}`}> */}
                     <ButtonContent>
                         {statut === 'replay' ?
                             <IconContainer>

@@ -11,7 +11,7 @@ import OceanCollectionButton from "../components/button/OceanCollectionButton"
 import { GameTitle, PageContainer } from "../utils/styles/Atoms"
 import { useState } from "react"
 import SnowflakeBarAnimate from "../components/decoration/SnowflakeBarAnimate"
-import FolioImage from "../components/decoration/element/FolioImage"
+
 const TitleContainer = styled.div`
     display: flex;
     justify-content: center;
@@ -176,12 +176,19 @@ const FirComponent = styled.div`
 
 function HomePage() {
     const [difficulty, setDifficulty] = useState('facile')
-    const [collection, setCollection] = useState('fruit')
+    const [collection, setCollection] = useState(null)
+
+    function toggleCollection(nextCollection) {
+        if (collection === nextCollection) {
+            setCollection(null)
+        } else {
+            setCollection(nextCollection)
+        }
+    }
 
     return (
         <PageContainer>
             <SnowflakeBarAnimate classPage={'home'} />
-            <FolioImage />
             <TitleContainer>
                 <DecorationTitle>
                     
@@ -201,7 +208,7 @@ function HomePage() {
                         <Selector>
                             <SubTitle>Mode :</SubTitle>
                             <SelectorContainer>
-                                <FilterButton label="solo" />
+                                <FilterButton label="solo" initialActive={true}/>
                                 <FilterButton label="duo" />
                             </SelectorContainer>
                         </Selector>
@@ -209,7 +216,7 @@ function HomePage() {
                         <Selector>
                             <SubTitle>Collections :</SubTitle>
                             <SelectorContainer>
-                                <FruitCollectionButton isActive={collection === "fruit"} click={() => setCollection('fruit')} />
+                                <FruitCollectionButton isActive={collection === "fruit"} click={() => toggleCollection('fruit')} />
                                 <OceanCollectionButton isActive={collection === "ocean"} disabled={true} />
                             </SelectorContainer>
                         </Selector>

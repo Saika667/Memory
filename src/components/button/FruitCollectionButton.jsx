@@ -121,22 +121,22 @@ const SnowflakeElement = styled.div`
     }
 `
 
-function FruitCollectionButton() {
+function FruitCollectionButton({ isActive, click }) {
     const [activeButton, setActiveButton]= useState(false)
 
     return (
         <ButtonContainer>
-            <SnowflakeElement className={`one ${activeButton ? 'active' : ''}`}>
+            <SnowflakeElement className={`one ${isActive ? 'active' : ''}`}>
                 <SnowflakeMedium />
             </SnowflakeElement>
 
-            <SnowflakeElement className={`two ${activeButton ? 'active' : ''}`}>
+            <SnowflakeElement className={`two ${isActive ? 'active' : ''}`}>
                 <SnowflakeMedium />
             </SnowflakeElement>
 
             <Button
-                onClick={() => setActiveButton(!activeButton)}
-                className={`${activeButton ? 'active' : ''}`}
+                onClick={() => click()}
+                className={`${isActive ? 'active' : ''}`}
             >
                 <Fruit className="pineapple">
                     <PineappleCard />
