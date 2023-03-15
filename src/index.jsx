@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import GamePage from './pages/GamePage';
 import GlobalStyle from './utils/styles/globalStyle';
@@ -10,7 +10,7 @@ import GlobalStyle from './utils/styles/globalStyle';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <Router>
+        <HashRouter>
             <App>
                 <GlobalStyle />
                 <Routes>
@@ -19,7 +19,7 @@ root.render(
                     <Route path="*" element={ <HomePage /> } />
                 </Routes>
             </App>
-        </Router>
+        </HashRouter>
     </React.StrictMode>
 );
 
