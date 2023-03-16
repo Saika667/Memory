@@ -122,7 +122,6 @@ const SnowflakeElement = styled.div`
 `
 
 function FruitCollectionButton({ isActive, click }) {
-    const [activeButton, setActiveButton]= useState(false)
 
     return (
         <ButtonContainer>

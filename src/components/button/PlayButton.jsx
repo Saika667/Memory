@@ -25,12 +25,35 @@ const ButtonLink = styled.div`
 `
 
 const ButtonContent = styled.div`
-    background-color: blueviolet;
+    background-image: linear-gradient(175deg, rgba(105,7,193,1) 12%, rgba(199,8,251,1) 70%);
     padding: 5px 25px;
     border-radius: 10px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    transform: scale(1);
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: 10px;
+        background-image: linear-gradient(175deg,rgba(199,8,251,1) 17%,rgba(105,7,193,1) 105%);
+        z-index: -1;
+        transition: all 500ms linear;
+        opacity: 0;
+    }
+
+    &:hover {
+        &:before {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+    }
 `
 const IconContainer = styled.div`
     display: flex;
@@ -73,9 +96,14 @@ function PlayButton({ difficulty, statut, click = null, collection }) {
                                 <FontAwesomeIcon icon={faPlay} />
                             </IconContainer>
                         } 
-                        <LabelButton>
-                            Jouer
-                        </LabelButton>
+                        {statut === 'replay' ?
+                            <LabelButton>
+                                Rejouer
+                            </LabelButton> :
+                            <LabelButton>
+                                Jouer
+                            </LabelButton>
+                        }
                     </ButtonContent>
                 </ButtonLink>
             </Button>
