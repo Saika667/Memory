@@ -92,7 +92,7 @@ const MountainComponent = styled.div`
         z-index: 5;
     }
     &.smallMountainFour {
-        bottom: -2.7rem;
+        bottom: -3.1rem;
         right: 5.8rem;
         z-index: 1;
     }
@@ -115,7 +115,7 @@ const Hill = styled.div`
     &.two {
         width: 9rem;
         height: 9rem;
-        bottom: -5.5rem;
+        bottom: -6.1rem;
         left: 6.4rem;
         z-index: 5;
         transform: rotate(-54deg);

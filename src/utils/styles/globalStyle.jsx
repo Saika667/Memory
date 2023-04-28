@@ -7,7 +7,7 @@ const StyledGlobalStyle = createGlobalStyle`
     html {
         :root {
             @media only screen and (min-width: 1366px) {
-                font-size: 29px;
+                font-size: 1.813rem;
             }
         }
     }

@@ -2,7 +2,8 @@ import { Children } from "react";
 import styled from "styled-components";
 
 const FrameContainer = styled.div`
-    
+    position: relative;
+    z-index: 8;
 `
 
 const ContentContainer = styled.div`
