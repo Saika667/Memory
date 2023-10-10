@@ -94,9 +94,10 @@ const LeafFruit = styled.div`
 `
 
 const Text = styled.div`
-    font-size: 35px;
+    font-size: 1.6rem;
+    text-align: center;
+    margin: 0.6rem 0 0 0;
     font-family: sans-serif;
-    padding-left: .3rem;
     position: relative;
     z-index: 1;
 `

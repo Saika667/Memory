@@ -70,8 +70,8 @@ const Game = styled.div.attrs(props => ({
     elementRow: props.elementRow
 }))`
     display: grid;
-    grid-template-columns: ${props => `repeat(${props.elementColumn}, 7.6rem)`};
-    grid-template-rows: ${props => `repeat(${props.elementRow}, 8.7rem)`};
+    grid-template-columns: ${props => `repeat(${props.elementColumn}, 6rem)`};
+    grid-template-rows: ${props => `repeat(${props.elementRow}, 7.8rem)`};
     padding: 10px 5px;
 `
 
@@ -310,6 +310,7 @@ ex: un state, useEffect se déclenchera à chaque changement de state
                     numberOfGames={numberOfGames}
                     setNumberOfGames={setNumberOfGames}
                     collection={collection}
+                    funcReplay={replay}
                 />
 
                 <GameContainer>

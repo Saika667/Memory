@@ -10,13 +10,13 @@ const KiwiContainer = styled.div`
 
     &.kiwi {
         top: 1.5rem;
-        left: 1rem;
+        left: .3rem;
         transform: rotate(180deg);
     }
 
     &.halfKiwi {
         top: 2.4rem;
-        left: 2.1rem;
+        left: 1.4rem;
     }
 `
 
@@ -80,7 +80,7 @@ const SeedContainer = styled.div`
         transform: rotate(180deg);
     }
     &.seedTwo {
-        top: .8rem;
+        top: .75rem;
         left: 1.3rem;
         transform: rotate(170deg);
     }
@@ -95,8 +95,8 @@ const SeedContainer = styled.div`
         transform: rotate(200deg);
     }
     &.seedFive {
-        top: .85rem;
-        left: 1.1rem;
+        top: .75rem;
+        left: 1.05rem;
         transform: rotate(160deg);
     }
     &.seedSix {
@@ -105,8 +105,8 @@ const SeedContainer = styled.div`
         transform: rotate(150deg);
     }
     &.seedSeven {
-        top: .9rem;
-        left: 2.1rem;
+        top: .95rem;
+        left: 2.15rem;
         transform: rotate(210deg);
     }
     &.seedEight {
@@ -184,13 +184,13 @@ const SeedContainer = styled.div`
         transform: rotate(65deg);
     }
     &.seedTwentyThree {
-        top: 1.4rem;
-        left: .6rem;
+        top: 1.45rem;
+        left: .55rem;
         transform: rotate(80deg);
     }
     &.seedTwentyFour {
         top: 1.25rem;
-        left: .6rem;
+        left: .55rem;
         transform: rotate(90deg);
     }
     &.seedTwentyFive {

@@ -14,25 +14,30 @@ const PomegranateContainer = styled.div`
     align-items: flex-end;
 
     &.pomegranate {
-        top: .5rem;
-        left: .0rem;
+        top: 0rem;
+        left: -.3rem;
     }
 
     &.halfPomegranate {
-        bottom: .5rem;
-        right: .0rem;
+        bottom: .1rem;
+        right: -.4rem;
         transform: rotate(45deg);
     }
 `
 
 const PomegranateBody = styled.div`
-    width: 4.1rem;
+    width: 3.8rem;
     height: 3.7rem;
     border-radius: 50%;
     background: radial-gradient(circle at calc(100% - 3rem) calc(100% - 2.5rem),rgba(255,92,105,1) 12%,rgba(245,0,20,1) 39%);
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &.half {
+        width: 4.1rem;
+        height: 3.7rem;
+    }
 `
 
 const PomegranateBodyTopContainer = styled.div`
@@ -582,7 +587,7 @@ function PomegranateCard() {
                     <PomegranateBodyTop />
                 </PomegranateBodyTopContainer>
                 
-                <PomegranateBody>
+                <PomegranateBody className="half">
                     <PomegranateInside>
                         <SeedContainer className="seedOne">
                             <Seed />

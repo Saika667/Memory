@@ -73,7 +73,6 @@ function PlayButton({ difficulty, statut, click = null, collection }) {
     const navigate = useNavigate()
 
     function handleClick() {
-        console.log(collection)
         if (collection === null || difficulty === null) {
             return
         }

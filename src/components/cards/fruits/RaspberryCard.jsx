@@ -11,13 +11,8 @@ const RaspberryContainer = styled.div`
     height: 4.5rem;
 
     &.raspberryOne {
-        top: .1rem;
-        left: .05rem;
-    }
-
-    &.raspberryTwo {
-        top: 2.75rem;
-        left: 2.35rem;
+        top: 1rem;
+        left: .65rem;
         transform: rotate(40deg);
     }
 `
@@ -304,121 +299,6 @@ function RaspberryCard() {
     return (
         <RaspberryCardContainer>
             <RaspberryContainer className="raspberryOne">
-                <RaspberryTopContainer>
-                    <RaspberryPeduncle />
-                    <RaspberryBotPeduncle className="onePeduncle"/>
-                    <RaspberryBotPeduncle className="twoPeduncle"/>
-                    <RaspberryBotPeduncle className="threePeduncle"/>
-                    <RaspberryBotPeduncle className="fourPeduncle"/>
-                </RaspberryTopContainer>
-                <RaspberryBodyContainer className="one">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-                <RaspberryBodyContainer className="two">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-                <RaspberryBodyContainer className="three">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-                <RaspberryBodyContainer className="four">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-                <RaspberryBodyContainer className="five">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-                <RaspberryBodyContainer className="six">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-                <RaspberryBodyContainer className="seven">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-                <RaspberryBodyContainer className="eight">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-                <RaspberryBodyContainer className="nine">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-                <RaspberryBodyContainer className="ten">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-                <RaspberryBodyContainer className="eleven">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-                <RaspberryBodyContainer className="twelve">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-                <RaspberryBodyContainer className="thirteen">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-                <RaspberryBodyContainer className="fourteen">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-                <RaspberryBodyContainer className="fifteen">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-                <RaspberryBodyContainer className="sixteen">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-                <RaspberryBodyContainer className="seventeen">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-                <RaspberryBodyContainer className="eighteen">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-                <RaspberryBodyContainer className="nineteen">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-                <RaspberryBodyContainer className="twenty">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-                <RaspberryBodyContainer className="twentyOne">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-                <RaspberryBodyContainer className="twentyTwo">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-                <RaspberryBodyContainer className="twentyThree">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-                <RaspberryBodyContainer className="twentyFour">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-                <RaspberryBodyContainer className="twentyFive">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-                <RaspberryBodyContainer className="twentySix">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-                <RaspberryBodyContainer className="twentySeven">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-                <RaspberryBodyContainer className="twentyEight">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-                <RaspberryBodyContainer className="twentyNine">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-                <RaspberryBodyContainer className="thirty">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-                <RaspberryBodyContainer className="thirtyOne">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-                <RaspberryBodyContainer className="thirtyTwo">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-                <RaspberryBodyContainer className="thirtyThree">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-                <RaspberryBodyContainer className="thirtyFour">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-                <RaspberryBodyContainer className="thirtyFive">
-                    <RaspberryBody />
-                </RaspberryBodyContainer>
-            </RaspberryContainer>
-
-            <RaspberryContainer className="raspberryTwo">
                 <RaspberryTopContainer>
                     <RaspberryPeduncle />
                     <RaspberryBotPeduncle className="onePeduncle"/>

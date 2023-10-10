@@ -9,8 +9,8 @@ const CherryContainer = styled.div`
     width: 5rem;
     height: 6rem;
     position: absolute;
-    top: .5rem;
-    left: .5rem;
+    top: 0;
+    left: -.1rem;
 `
 
 const CherryBodyContainer = styled.div`

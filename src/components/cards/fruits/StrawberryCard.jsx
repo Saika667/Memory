@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { darken } from "polished"
 
 const StrawberryCardContainer = styled.div`
 
@@ -11,13 +10,8 @@ const StrawberryContainer = styled.div`
     height: 4.5rem;
 
     &.strawberryOne {
-        top: .1rem;
-        left: 0;
-        transform: rotate(10deg);
-    }
-    &.strawberryTwo {
-        top: 2.9rem;
-        left: 1.7rem;
+        top: 1.2rem;
+        left: .3rem;
         transform: rotate(55deg);
     }
 `
@@ -195,7 +189,7 @@ const StrawberryStem = styled.div`
 
 const SeedContainer = styled.div`
     position: absolute;
-    height: .28rem;
+    height: .26rem;
     width: .1rem;
     overflow: hidden;
     transform: rotate(180deg);
@@ -346,8 +340,8 @@ const SeedContainer = styled.div`
 `
 
 const TopSeed = styled.div`
-    width: .1rem;
-    height: .2rem;
+    width: .15rem;
+    height: .15rem;
     background-color: #f8edc6;
     position: relative;
 
@@ -378,206 +372,14 @@ const BottomSeed = styled.div`
     border-radius: 50%;
     background-color: #f8edc6;
     position: absolute;
-    bottom: 0;
+    bottom: .1rem;
+    left: .02rem;
 `
 
 function StrawberryCard() {
     return (
         <StrawberryCardContainer>
            <StrawberryContainer className="strawberryOne">
-                <Strawberry>
-                    <StrawberryStem />
-                    <StrawberryLeaf className="one"/>
-                    <StrawberryLeaf className="two"/>
-                    <StrawberryLeaf className="three"/>
-                    <StrawberryLeaf className="four"/>
-                    <StrawberryLeaf className="five"/>
-                    <StrawberryLeaf className="six"/>
-                    <StrawberryLeaf className="seven"/>
-                    <StrawberryLeaf className="eight"/>
-                    <StrawberryLeaf className="nine"/>
-                    <StrawberryLeaf className="ten"/>
-                    <StrawberryLeaf className="eleven"/>
-                    <StrawberryLeaf className="twelve"/>
-                    <StrawberryLeaf className="thirteen"/>
-
-                    <StrawberryBodyTop className="right"/>
-                    <StrawberryBodyTop className="left"/>
-                    <StrawberryBodyBottom />
-
-                    <SeedContainer className="seedOne">
-                        <TopSeed />
-                        <BottomSeed />
-                    </SeedContainer>
-
-                    <SeedContainer className="seedTwo">
-                        <TopSeed />
-                        <BottomSeed />
-                    </SeedContainer>
-
-                    <SeedContainer className="seedThree">
-                        <TopSeed />
-                        <BottomSeed />
-                    </SeedContainer>
-
-                    <SeedContainer className="seedFour">
-                        <TopSeed />
-                        <BottomSeed />
-                    </SeedContainer>
-
-                    <SeedContainer className="seedFive">
-                        <TopSeed />
-                        <BottomSeed />
-                    </SeedContainer>
-
-                    <SeedContainer className="seedSix">
-                        <TopSeed />
-                        <BottomSeed />
-                    </SeedContainer>
-
-                    <SeedContainer className="seedSeven">
-                        <TopSeed />
-                        <BottomSeed />
-                    </SeedContainer>
-
-                    <SeedContainer className="seedEight">
-                        <TopSeed />
-                        <BottomSeed />
-                    </SeedContainer>
-
-                    <SeedContainer className="seedNine">
-                        <TopSeed />
-                        <BottomSeed />
-                    </SeedContainer>
-
-                    <SeedContainer className="seedTen">
-                        <TopSeed />
-                        <BottomSeed />
-                    </SeedContainer>
-
-                    <SeedContainer className="seedEleven">
-                        <TopSeed />
-                        <BottomSeed />
-                    </SeedContainer>
-
-                    <SeedContainer className="seedTwelve">
-                        <TopSeed />
-                        <BottomSeed />
-                    </SeedContainer>
-
-                    <SeedContainer className="seedThirteen">
-                        <TopSeed />
-                        <BottomSeed />
-                    </SeedContainer>
-
-                    <SeedContainer className="seedFourteen">
-                        <TopSeed />
-                        <BottomSeed />
-                    </SeedContainer>
-
-                    <SeedContainer className="seedFifteen">
-                        <TopSeed />
-                        <BottomSeed />
-                    </SeedContainer>
-
-                    <SeedContainer className="seedSixteen">
-                        <TopSeed />
-                        <BottomSeed />
-                    </SeedContainer>
-
-                    <SeedContainer className="seedSeventeen">
-                        <TopSeed />
-                        <BottomSeed />
-                    </SeedContainer>
-
-                    <SeedContainer className="seedEighteen">
-                        <TopSeed />
-                        <BottomSeed />
-                    </SeedContainer>
-
-                    <SeedContainer className="seedNineteen">
-                        <TopSeed />
-                        <BottomSeed />
-                    </SeedContainer>
-
-                    <SeedContainer className="seedTwenty">
-                        <TopSeed />
-                        <BottomSeed />
-                    </SeedContainer>
-
-                    <SeedContainer className="seedTwentyOne">
-                        <TopSeed />
-                        <BottomSeed />
-                    </SeedContainer>
-
-                    <SeedContainer className="seedTwentyTwo">
-                        <TopSeed />
-                        <BottomSeed />
-                    </SeedContainer>
-
-                    <SeedContainer className="seedTwentyThree">
-                        <TopSeed />
-                        <BottomSeed />
-                    </SeedContainer>
-
-                    <SeedContainer className="seedTwentyFour">
-                        <TopSeed />
-                        <BottomSeed />
-                    </SeedContainer>
-
-                    <SeedContainer className="seedTwentyFive">
-                        <TopSeed />
-                        <BottomSeed />
-                    </SeedContainer>
-
-                    <SeedContainer className="seedTwentySix">
-                        <TopSeed />
-                        <BottomSeed />
-                    </SeedContainer>
-
-                    <SeedContainer className="seedTwentySeven">
-                        <TopSeed />
-                        <BottomSeed />
-                    </SeedContainer>
-
-                    <SeedContainer className="seedTwentyEight">
-                        <TopSeed />
-                        <BottomSeed />
-                    </SeedContainer>
-
-                    <SeedContainer className="seedTwentyNine">
-                        <TopSeed />
-                        <BottomSeed />
-                    </SeedContainer>
-
-                    <SeedContainer className="seedThirty">
-                        <TopSeed />
-                        <BottomSeed />
-                    </SeedContainer>
-
-                    <SeedContainer className="seedThirtyOne">
-                        <TopSeed />
-                        <BottomSeed />
-                    </SeedContainer>
-
-                    <SeedContainer className="seedThirtyTwo">
-                        <TopSeed />
-                        <BottomSeed />
-                    </SeedContainer>
-
-                    <SeedContainer className="seedThirtyThree">
-                        <TopSeed />
-                        <BottomSeed />
-                    </SeedContainer>
-
-                    <SeedContainer className="seedThirtyFour">
-                        <TopSeed />
-                        <BottomSeed />
-                    </SeedContainer>
-                </Strawberry>
-           </StrawberryContainer>
-
-           <StrawberryContainer className="strawberryTwo">
                 <Strawberry>
                     <StrawberryStem />
                     <StrawberryLeaf className="one"/>

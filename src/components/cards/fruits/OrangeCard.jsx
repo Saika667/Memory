@@ -13,13 +13,13 @@ const OrangeContainer = styled.div`
     align-items: flex-end;
 
     &.orange {
-        top : 1rem;
-        left : .5rem;
+        top: .5rem;
+        left: .3rem;
     }
 
     &.halfOrange {
-        top : 3.5rem;
-        left :2.5rem;
+        top: 3rem;
+        left: 1.8rem;
         transform: rotateZ(47deg) rotateX(-53deg) rotateY(11deg);
     }
 `
@@ -43,44 +43,44 @@ const ImperfectionSkin = styled.div`
     position: absolute;
 
     &.one {
-        top: 10px;
-        left: 10px;
+        top: 1rem;
+        left: 1rem;
     }
     &.two {
-        top: 5px;
-        left: 16px;
+        top: 0.5rem;
+        left: 1.1rem;
     }
     &.three {
-        top: 10px;
-        left: 20px;
+        top: 0.7rem;
+        left: 1.6rem;
     }
     &.four {
-        top: 8px;
-        left: 25px;
+        top: 0.8rem;
+        left: 2.1rem;
     }
     &.five {
-        top: 5px;
-        left: 34px;
+        top: 0.9rem;
+        left: 0.5rem;
     }
     &.six {
-        top: 13px;
-        left: 13px;
+        top: 0.7rem;
+        left: 0.8rem;
     }
     &.seven {
-        top: 11px;
-        left: 32px;
+        top: 0.8rem;
+        left: 1.3rem;
     }
     &.eight {
-        top: 10px;
-        left: 42px;
+        top: 1rem;
+        left: 1.9rem;
     }
     &.nine {
-        top: 13px;
-        left: 37px;
+        top: 0.6rem;
+        left: 2.3rem;
     }
     &.ten {
-        top: 15px;
-        left: 30px;
+        top: 0.6rem;
+        left: 1.9rem;
     }
 `
 

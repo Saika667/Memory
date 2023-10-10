@@ -11,15 +11,15 @@ const PitahayaContainer = styled.div`
     &.pitahaya {
         width: 4rem;
         height: 5.5rem;
-        top: .5rem;
-        left: .5rem;
+        top: .1rem;
+        left: -.2rem;
     }
 
     &.halfPitahaya {
         width: 3rem;
         height: 3rem;
-        bottom: .5rem;
-        right: .5rem;
+        bottom: .2rem;
+        right: .2rem;
         z-index: 4;
     }
 `
@@ -46,13 +46,13 @@ const ScalesContainer = styled.div`
         z-index: 4;
     }
     &.two {
-        bottom: 1.35rem;
+        bottom: 1.25rem;
         left: 2.3rem;
         transform: rotateY(-38deg) rotateZ(59deg);
         z-index: 4;
     }
     &.three {
-        bottom: .3rem;
+        bottom: .2rem;
         left: .3rem;
         transform: rotateY(38deg) rotateZ(-59deg);
         z-index: 4;
@@ -294,7 +294,7 @@ const Seed = styled.div`
     }
     &.seedEighteen {
         top: 2.3rem;
-        left: .4rem;
+        left: .55rem;
     }
     &.seedNineteen {
         top: 1.3rem;
@@ -380,8 +380,8 @@ const Seed = styled.div`
         opacity: .5;
     }
     &.seedThirtySix {
-        top: .8rem;
-        left: .1rem;
+        top: .7rem;
+        left: .25rem;
         opacity: .5;
     }
 `

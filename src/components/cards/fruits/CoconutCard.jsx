@@ -9,14 +9,14 @@ export const CoconutContainer = styled.div`
     position: absolute;
 
     &.coco {
-        top: 1.5rem;
-        left: 2.5rem;
+        top: .7rem;
+        left: 1.5rem;
         transform: rotate(65deg);
     }
 
     &.halfCoco {
-        top: 3.7rem;
-        left: .4rem;
+        top: 3.3rem;
+        left: .1rem;
         transform: rotate(27deg);
     }
 `
@@ -66,7 +66,7 @@ const HalfCoconut = styled.div`
         border-radius: 50%;
         background-color: #583429;
         position: absolute;
-        top: -.25rem;
+        top: -.35rem;
     }
 
     &:after {
@@ -87,7 +87,7 @@ const HalfCoconutWhite = styled.div`
     background-color: white;
     position: absolute;
     left: .1rem;
-    top: -.2rem;
+    top: -.3rem;
 `
 
 const HalfCoconutInside = styled.div`

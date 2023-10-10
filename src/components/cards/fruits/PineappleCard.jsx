@@ -13,7 +13,7 @@ const PineappleContainer = styled.div`
     justify-content: center;
     flex-direction: column;
     top: 1rem;
-    left: 1.7rem;
+    left: .9rem;
 `
 
 const TopPineappleContainer = styled.div`
@@ -26,38 +26,38 @@ const PineappleLeefContainer = styled.div`
     position: absolute;
 
     &.leefOne {
-        left: 26px;
-        top: 10px;
+        left: 1.6rem;
+        top: 0.4rem;
         transform: rotate(45deg);
     }
 
     &.leefTwo {
-        left: 6px;
-        top: 10px;
+        left: 0.5rem;
+        top: 0.4rem;
         transform: rotateY(180deg) rotateZ(45deg);
     }
 
     &.leefThree {
-        left: 9px;
-        top: 3px;
+        left: 0.7rem;
+        top: 0.1rem;
         transform: rotateY(180deg) rotateZ(45deg);
     }
 
     &.leefFour {
-        left: 6px;
-        top: 19px;
+        left: 0.4rem;
+        top: 0.8rem;
         transform: rotateY(180deg) rotateZ(45deg);
     }
 
     &.leefFive {
-        left: 23px;
-        top: 2px;
+        left: 1.4rem;
+        top: 0.1rem;
         transform: rotate(45deg);
     }
 
     &.leefSix {
-        left: 26px;
-        top: 19px;
+        left: 1.7rem;
+        top: 0.8rem;
         transform: rotate(45deg);
     }
 `
@@ -85,63 +85,68 @@ const CirclePineappleBodyContainer = styled.div`
     position: absolute;
     overflow: hidden;
 
+    &.one {
+        top: 0;
+        left: .2rem;
+    }
+
     &.two {
-        top: 6px;
-        left: -5px;
+        top: 0.4rem;
+        left: -0.1rem;
         z-index: 2;
     }
 
     &.three {
-        top: 12px;
-        left: 1px;
+        top: 0.7rem;
+        left: -0.4rem;
         z-index: 2;
     }
 
     &.four {
-        top: 18px;
-        left: -5px;
+        top: 1rem;
+        left: -0.1rem;
         z-index: 2;
     }
 
     &.five {
-        top: 24px;
-        left: -12px;
+        top: 1.3rem;
+        left: -0.4rem;
         z-index: 2;
     }
 
     &.six {
-        top: 30px;
-        left: -5px;
+        top: 1.6rem;
+        left: -0.1rem;
         z-index: 2;
     }
 
     &.seven {
-        top: 36px;
-        left: -11px;
+        top: 1.9rem;
+        left: -0.4rem;
         z-index: 2;
     }
 
     &.eight {
-        top: 42px;
-        left: -5px;
+        top: 2.2rem;
+        left: -0.1rem;
         z-index: 2;
     }
 
     &.nine {
-        top: 48px;
-        left: -11px;
+        top: 2.5rem;
+        left: -0.4rem;
         z-index: 2;
     }
 
     &.ten {
-        top: 54px;
-        left: -5px;
+        top: 2.75rem;
+        left: -0.1rem;
         z-index: 2;
     }
 
     &.eleven {
-        top: 60px;
-        left: -11px;
+        top: 3rem;
+        left: -0.4rem;
         z-index: 2;
     }
 `
@@ -191,9 +196,11 @@ function PineappleCard() {
                         <CirclePineappleBody />
                         <CirclePineappleBody />
                         <CirclePineappleBody />
+                        <CirclePineappleBody />
                     </CirclePineappleBodyContainer>
 
                     <CirclePineappleBodyContainer className="two">
+                        <CirclePineappleBody />
                         <CirclePineappleBody />
                         <CirclePineappleBody />
                         <CirclePineappleBody />
@@ -207,9 +214,11 @@ function PineappleCard() {
                         <CirclePineappleBody />
                         <CirclePineappleBody />
                         <CirclePineappleBody />
+                        <CirclePineappleBody />
                     </CirclePineappleBodyContainer>
 
                     <CirclePineappleBodyContainer className="four">
+                        <CirclePineappleBody />
                         <CirclePineappleBody />
                         <CirclePineappleBody />
                         <CirclePineappleBody />
@@ -223,9 +232,11 @@ function PineappleCard() {
                         <CirclePineappleBody />
                         <CirclePineappleBody />
                         <CirclePineappleBody />
+                        <CirclePineappleBody />
                     </CirclePineappleBodyContainer>
 
                     <CirclePineappleBodyContainer className="six">
+                        <CirclePineappleBody />
                         <CirclePineappleBody />
                         <CirclePineappleBody />
                         <CirclePineappleBody />
@@ -239,9 +250,11 @@ function PineappleCard() {
                         <CirclePineappleBody />
                         <CirclePineappleBody />
                         <CirclePineappleBody />
+                        <CirclePineappleBody />
                     </CirclePineappleBodyContainer>
 
                     <CirclePineappleBodyContainer className="eight">
+                        <CirclePineappleBody />
                         <CirclePineappleBody />
                         <CirclePineappleBody />
                         <CirclePineappleBody />
@@ -255,6 +268,7 @@ function PineappleCard() {
                         <CirclePineappleBody />
                         <CirclePineappleBody />
                         <CirclePineappleBody />
+                        <CirclePineappleBody />
                     </CirclePineappleBodyContainer>
 
                     <CirclePineappleBodyContainer className="ten">
@@ -263,9 +277,11 @@ function PineappleCard() {
                         <CirclePineappleBody />
                         <CirclePineappleBody />
                         <CirclePineappleBody />
+                        <CirclePineappleBody />
                     </CirclePineappleBodyContainer>
 
                     <CirclePineappleBodyContainer className="eleven">
+                        <CirclePineappleBody />
                         <CirclePineappleBody />
                         <CirclePineappleBody />
                         <CirclePineappleBody />

@@ -12,14 +12,14 @@ const PeachContainer = styled.div`
     z-index: -1;
 
     &.peach {
-        left: .4rem;
-        top: .7rem;
+        left: 0;
+        top: .2rem;
         transform: rotate(-20deg);
     }
 
     &.halfPeach {
-        top: 2.5rem;
-        left: 2.5rem;
+        top: 2.7rem;
+        left: 1.5rem;
     }
 `
 

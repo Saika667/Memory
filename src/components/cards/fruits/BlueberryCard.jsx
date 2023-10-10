@@ -10,46 +10,46 @@ export const BlueberryContainer = styled.div`
 
     &.berryOne {
         bottom: 2rem;
-        left: 2.5rem;
+        left: 1.5rem;
     }
     &.berryTwo {
         bottom: 2rem;
-        left: 3.4rem;
+        left: 2.4rem;
         transform: rotate(-116deg);
     }
     &.berryThree {
         bottom: 2.8rem;
-        left: 3rem;
+        left: 2rem;
         transform: rotate(183deg);
     }
     &.berryFour {
         bottom: 1.8rem;
-        left: 1.8rem;
+        left: .8rem;
         transform: rotate(126deg);
     }
     &.berryFive {
         bottom: 2.88rem;
-        left: 2rem;
+        left: 1rem;
         transform: rotate(-45deg);
     }
     &.berrySix {
-        bottom: 2rem;
-        left: 0.5rem;
+        bottom: .8rem;
+        left: 0.1rem;
         transform: rotate(163deg);
     }
     &.berrySeven {
         bottom: 2rem;
-        left: 4.6rem;
+        left: 3.6rem;
         transform: rotate(180deg);
     }
     &.berryEight {
         bottom: 2.8rem;
-        left: 4.1rem;
+        left: 3.1rem;
         transform: rotate(163deg);
     }
     &.berryNine {
         bottom: 3.6rem;
-        left: 3.5rem;
+        left: 2.5rem;
         transform: rotate(214deg);
     }
 `

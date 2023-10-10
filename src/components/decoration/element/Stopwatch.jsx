@@ -111,9 +111,9 @@ const StopwatchBody =styled.div`
         position: absolute;
         top: 1rem;
         left: .5rem;
-        font-size: 12px;
-        line-height: 14px;
-        padding-left: 3px;
+        font-size: .7rem;
+        text-align: center;
+        line-height: .9rem;
         box-sizing: border-box;
     }
 `

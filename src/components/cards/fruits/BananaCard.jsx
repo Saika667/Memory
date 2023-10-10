@@ -36,12 +36,6 @@ const BananaContainer = styled.div`
         left: 2.75rem;
         transform: rotate(-16deg);
     }
-
-    &.bananaFive {
-        top: 1.15rem;
-        left: 3.45rem;
-        transform: rotate(-27deg);
-    }
 `
 
 const BananaTop = styled.div`
@@ -146,11 +140,6 @@ function BananaCard() {
             </BananaContainer>
 
             <BananaContainer className="bananaFour">
-                <BananaTop />
-                <Banana />
-            </BananaContainer>
-
-            <BananaContainer className="bananaFive">
                 <BananaTop />
                 <Banana />
             </BananaContainer>

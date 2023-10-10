@@ -8,7 +8,8 @@ const WatermelonCardContainer = styled.div`
 const WatermelonContainer = styled.div`
     position: absolute;
     top: 2.5rem;
-    left: .5rem;
+    left: -.5rem;
+    transform: rotate(40deg);
 `
 
 const Watermelon = styled.div`

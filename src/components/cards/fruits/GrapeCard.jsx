@@ -9,8 +9,8 @@ const BunchOfGrapes = styled.div`
     position: absolute;
     width: 5rem;
     height: 6rem;
-    top: .4rem;
-    left: .5rem;
+    top: 0;
+    left: -.1rem;
     transform: rotate(10deg);
 `
 
@@ -62,12 +62,12 @@ const GrapeContainer = styled.div`
 
     &.nine {
         bottom: 2.24rem;
-        left: .7rem;
+        left: .75rem;
     }
 
     &.ten {
         bottom: 2.24rem;
-        left: 3.3rem;
+        left: 3.25rem;
     }
 
     &.eleven {

@@ -1,10 +1,9 @@
 import BackCard from "./BackCard"
 import styled from "styled-components"
-import { useState } from "react"
 
 const CardContainer = styled.div`
-    width: 7rem;
-    height: 8rem;
+    width: 5rem;
+    height: 7.5rem;
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -18,8 +17,8 @@ const CardContainer = styled.div`
 `
 
 const CardContent = styled.div`
-    width: 7rem;
-    height: 8rem;
+    width: 5.8rem;
+    height: 7.5rem;
     background-color: white;
     border-radius: 3px;
     border: .5rem solid green;

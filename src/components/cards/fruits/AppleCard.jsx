@@ -17,12 +17,12 @@ const AppleContainer = styled.div`
    
    &.apple {
         top: .8rem;
-        left: .625rem;
+        left: .325rem;
    }
 
    &.halfApple {
         top: 3.125rem;
-        left: 2.5rem;
+        left: 2rem;
    }
 `
 const Peduncle = styled.div`

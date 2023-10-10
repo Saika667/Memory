@@ -16,21 +16,21 @@ const PearContainer = styled.div`
     
 
     &.pear {
-        top: .2rem;
-        left: .4rem;
+        top: 0;
+        left: 1.8rem;
     }
 
     &.halfPear {
-        bottom: -0.7rem;
-        right: 0.9rem;
+        bottom: -1.1rem;
+        right: 0.6rem;
         transform: rotate(105deg);
         z-index: 2;
     }
 `
 const PearBodyTopContainer = styled.div`
     position: absolute;
-    left: 9px;
-    top: 6px;
+    left: .6rem;
+    top: .5rem;
 `
 
 const ShadowPedunclePear = styled.div`

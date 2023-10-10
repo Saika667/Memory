@@ -13,13 +13,13 @@ const MangosteenContainer = styled.div`
     align-items: flex-end;
 
     &.mangosteen {
-        top: 1rem;
-        right: 1rem;
+        top: .7rem;
+        right: .3rem;
     }
 
     &.halfMangosteen {
-        bottom: 1.2rem;
-        right: 2rem;
+        bottom: 1rem;
+        right: 1.6rem;
     }
 `
 

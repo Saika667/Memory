@@ -51,7 +51,7 @@ const ButtonContainer = styled.div`
     align-items: center;
  `
 
-function Modal({ result, time, transformTime, pairsFound, isVisible, numberOfGames, setNumberOfGames, closeModal, collection }) {
+function Modal({ result, time, transformTime, pairsFound, isVisible, numberOfGames, setNumberOfGames, closeModal, collection, funcReplay }) {
     const { difficulty } = useParams();
     
     return (
@@ -79,6 +79,7 @@ function Modal({ result, time, transformTime, pairsFound, isVisible, numberOfGam
                             click={() => {
                                 setNumberOfGames(numberOfGames + 1)
                                 closeModal(false)
+                                funcReplay(difficulty)
                             }}
                         />
                         <HomeButton />

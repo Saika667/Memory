@@ -13,7 +13,7 @@ const LemonContainer = styled.div`
     justify-content: center;
     align-items: center;
     top: 1rem;
-    left: 1rem;
+    left: .5rem;
     transform: rotate(20deg);
 `
 const LemonTop = styled.div`

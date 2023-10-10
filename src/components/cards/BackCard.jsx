@@ -10,15 +10,15 @@ const BackCardContainer = styled.div`
 `
 
 const BackCardContent = styled.div`
-    width: 6rem;
-    height: 7rem;
+    width: 4.85rem;
+    height: 6.55rem;
     position: relative;
     background: radial-gradient(circle, rgba(0,255,55,1) 25%, rgba(216,231,24,1) 63%);
 `
 const Text = styled.p`
     position: absolute;
-    top: 1rem;
-    left: 1.5rem;
+    top: 1.6rem;
+    left: 1.8rem;
     font-family: sans-serif;
     font-size: 86px;
     color: #ffefef;
@@ -31,18 +31,18 @@ const FruitContainer = styled.div`
 
     &.pineapple {
         top: -1rem;
-        left: -.3rem;
+        left: .6rem;
     }
     &.watermelon {
         z-index: 3;
-        top: 0rem;
-        left: 2.5rem;
-        transform: rotate(45deg);
+        top: -.4rem;
+        left: .8rem;
+        transform: rotate(17deg);
     }
     &.coconut {
         z-index: 4;
-        top: 1.6rem;
-        left: .2rem;
+        top: 2.5rem;
+        left: 0;
     }
 
     &.blueberryOne {
